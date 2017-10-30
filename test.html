@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pause</title>
+</head>
+<body>
+
+<div class="compteur">
+    <p>  </p>
+</div>
+
+
+
+</body>
+<script >
+
+    var conteneur = document.querySelector('.compteur');
+
+
+    var temps = 0;
+
+    var myVar = setInterval(myTimer, 80);
+
+    function myTimer() {
+        temps = temps + 1;
+        var next = (300 - temps)/60;
+        conteneur.innerHTML = 'La pause est dans : '+ Math.round(next)  +' minutes';
+        if (temps > 240){
+            next = 300 - temps;
+            conteneur.innerHTML = 'La pause est dans : '+ next +' secondes '
+        }
+            console.log(temps);
+        QuandPause();
+
+    }
+
+    function QuandPause() {
+        if (temps >= 300){
+            conteneur.innerHTML = 'PAAAAAAAAAAAAAAAAUUUUUUUUUUUUUUUUUUUUSE ';
+            if (temps >= 400){
+                temps = 0
+            }
+        }
+
+    }
+
+</script>
+</html>
